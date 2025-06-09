@@ -1,14 +1,23 @@
-# Usa l'immagine di OpenJDK 17
+# --------------------------
+# FASE 1: Build con Maven
+# --------------------------
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
+
+WORKDIR /build
+COPY . .
+
+RUN mvn clean package -DskipTests
+
+# --------------------------
+# FASE 2: Runtime con JDK
+# --------------------------
 FROM openjdk:17-jdk-slim
 
-# Imposta la working directory
 WORKDIR /app
 
-# Copia il file JAR dell'app Spring Boot
-COPY target/sistemi-distribuiti-0.0.1-SNAPSHOT.jar app.jar
+#  Copia il file JAR dalla fase 'builder'
+COPY --from=builder /build/target/sistemi-distribuiti-0.0.1-SNAPSHOT.jar app.jar
 
-# Esponi la porta su cui gira Spring Boot
 EXPOSE 8080
 
-# Comando per eseguire il backend
 CMD ["java", "-jar", "app.jar"]
