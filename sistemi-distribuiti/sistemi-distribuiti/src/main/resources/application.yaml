@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: sistemi-distribuiti-back-end
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}  # Usa variabili d'ambiente per configurare il database
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+security:
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}   # Chiave segreta dal contesto Docker
+    expiration-time: 3600000
+
+app:
+  reset-password-url: ${RESET_PASSWORD_URL}
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: ${MAIL_USERNAME}
+  password: ${MAIL_PASSWORD}
+  protocol: smtp
+  properties:
+    mail.smtp.auth: true
+    mail.smtp.starttls.enable: true
+    mail.smtp.ssl.trust: "*"
+logging:
+  level:
+    org:
+      springframework:
+        mail: DEBUG
+
+huggingface:
+  api-url: ${HUGGINGFACE_API_URL}
+  api-token: ${HUGGINGFACE_API_TOKEN}

@@ -1,0 +1,55 @@
+name: sistemi_distribuiti_front
+description: A Flutter project for your front-end application.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# Versioning of your application
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.0 <4.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_spinkit: ^5.1.0
+  another_flushbar: ^1.10.29
+  cupertino_icons: ^1.0.2
+  intl: ^0.20.2
+  flutter_svg: ^2.0.5
+  stomp_dart_client: ^2.1.1
+  provider: ^6.1.2
+  http: ^1.2.3
+  flutter_staggered_animations: ^1.0.0
+  jwt_decode: ^0.3.0
+  dart_jsonwebtoken: ^2.4.0
+  flutter_secure_storage: ^10.0.0-beta.4
+  flutter_secure_storage_web: ^2.0.0
+  shared_preferences: ^2.2.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.0
+  build_web_compilers: ^4.0.4
+
+
+flutter:
+  uses-material-design: true
+
+  # Specify the assets folder for images and other static assets
+  assets:
+    - assets/logo.png
+
+  # Specify the fonts configuration
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+        - asset: fonts/Roboto-Bold.ttf
+          weight: 700
