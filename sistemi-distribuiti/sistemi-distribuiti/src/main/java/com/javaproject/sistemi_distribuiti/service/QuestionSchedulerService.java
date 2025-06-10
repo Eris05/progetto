@@ -26,7 +26,7 @@ public class QuestionSchedulerService {
     private final UserRepository userRepository;
     private final EmailService emailService;
 
-    @Scheduled(fixedRate = 300000) // Esegui ogni 5 minuti (300000 ms)
+    @Scheduled(fixedRate = 60000) // Esegui ogni 5 minuti (300000 ms)
     public void updateExpiredQuestions() {
         LocalDateTime now = LocalDateTime.now();
 
