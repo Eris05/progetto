@@ -9,3 +9,7 @@ docker-compose build
 docker-compose up -d
 
 Aprire un browser e digitare http://localhost:63569 per visionare il sito in locale.
+Registrarsi come utente, con un email valida.
+Per visionare il funzionamento lato dipendente, entrare con credenziali di test riportate qui di seguito:
+email: dipendente@example.com
+password: dipendente
