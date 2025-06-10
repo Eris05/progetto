@@ -211,7 +211,14 @@ class _AuthScreenState extends State<AuthScreen> {
           final token = response['token'];
           Map<String, dynamic> payload = Jwt.parseJwt(token);
           final role = payload['role'];
-
+          // Controllo ruolo coerente con lo switch
+          if ((isEmployee && role != 'EMPLOYEE') || (!isEmployee && role == 'EMPLOYEE')) {
+            _showError('Ruolo non corrispondente. Controlla di aver selezionato il ruolo corretto.');
+            setState(() {
+              isLoading = false;
+            });
+            return;
+          }
           await prefs?.setString('jwt_token', token);
 
           setState(() {
