@@ -1,0 +1,13 @@
+Il progetto per poter essere eseguito in locale ha bisogno della creazione di un file .env da inserire nella directory "progetto".
+Il file .env necessità dei seguenti valori:
+JWT_SECRET_KEY=...
+MAIL_USERNAME=...
+MAIL_PASSWORD=...
+HUGGINGFACE_API_TOKEN=...
+
+Tali parametri saranno allegati per email per favorire test in locale. 
+
+Successivamente alla creazione del file, posizionarsi da terminale nella cartella progetto e mandare in esecuzione il seguente comando:
+docker-compose up --build -d
+
+Aprire un browser e digitare http://localhost:63569 per visionare il sito.
