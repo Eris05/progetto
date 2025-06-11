@@ -5,7 +5,7 @@ HUGGINGFACE_API_TOKEN=...
 
 Il JWT_SECRET_KEY deve essere di 32 bit.
 Successivamente alla creazione del file .env, posizionarsi da terminale nella cartella progetto e mandare in esecuzione i seguenti comandi:
-docker-compose build
+docker-compose build e successivamente 
 docker-compose up -d
 
 Aprire un browser e digitare http://localhost:63569 per visionare il sito in locale.
